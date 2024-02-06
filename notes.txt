@@ -1,0 +1,139 @@
+1) defaulted & deleted member functions\
+   :you can explicitly specify what is enabled vs disabled
+
+2) constructor delegation
+   : transfer control from one constructor another of the same class to use 
+   "chaining of contructors" to fully construct an object. it can avoid
+   duplicated initialization code.
+
+3) explicit keyword
+   : prevents a constructor with ONLY 1 "unknown/non-default" parameter to be 
+   used for implicit type convertion.
+
+4) introdution to smart pointers
+   : scope based resource management for handling pointer deallocation "smartly".
+
+5) using keyword
+   : creates an alternate name/alias for some type.
+
+6) auto keyword
+   : allows for inferring or deducting type of a variable based on intial value.
+
+7) uniform initialization  & member list initialization  & inClass initialization
+   : one common syntactical way of initialization everything.
+
+8) nullptr
+   : replacement of NULL macro with a proper type (std::nullptr_t)
+   
+
+   lvalues : values that are permanent in RAM
+      (have a fixed location) aka also have an address
+      lvalues have a name guiven by us!!!
+
+   rvalues: temporary value (result of an expression)
+      or result of displacement*
+      rvalues don't have a fixed address
+      (we can't go to their location in RAM
+      and find the value WITH GURANTEE!)
+
+
+Inheritance: Alpha extends Beta or Beta extends Alpha
+
+Association: Alphs uses functionalities from Beta 
+                            (or)
+             Beta uses functionalities from Alpha
+
+Composition: Alpha is instantiated by using one or more instances of Beta.
+             Instance of Alpha controls the life of instance/s of Alpha.
+                                    (or)
+            Beta is instantiated by using one or more instances of Alpha.
+             Instance of Beta controls the life of instance/s of Beta.
+
+Aggregation: Alpha is instantiated by using one or more instances of Beta.
+             Instance of alpha does not constrol the lifetime of instance/s of Beta.
+                                        (or)
+             Beta is instantiated by using one or more instances of Alpha.
+             Instance of Beta does not constrol the lifetime of instance/s of Alpha.
+
+
+/*
+for every data member, following things must be considered
+1) is it supposed to be mutable or immutable?
+    -- does it need to auto increment based on previous value?
+2) should be accepted by value, by lvalue reference or rvalue reference or both?
+3) is it stack allocated or heap allocated? (or maybe both partially)
+4) does it need to smartly managed? (applicable only for heap allocated memory)
+5) does the data member need to have a non-null state at the time of instantiation of the object?
+
+BankAccount
+    _accountNumber (const long) [use a static value to auto increment]
+    _accountHolderName (std::string&& )
+    _accountType (enum -> SAVINGS, CURRENT, PENSION, SALARY)
+    _debitCard (shared_ptr to an instance of heap allocated DebitCard)
+        _cvv (const unsigned short)
+        _cardNumber (long)
+        _type ()
+        _expiry
+*/
+
+class,activity,usecase,sequence diagrams 
+
+FIRST CLASS FUNCTIONS IN PYHTON!!
+
+1) Every Function has an type (its signature)
+2) Function can be passed as a parameter to anotheer functions
+3) Functions can be returned from other functions 
+4) Functions address can be captured in a variable
+5) Functions can be stored in containers
+
+/*
+    In capture clause
+    [&] means all variables in enclosing function are captured by reference
+    [=] means all variables in enclosing function are captured by value
+    [&n1] means only n1 variable is caprtured by reference
+    [n1] menas only n1 is captured by value
+    [n1, &a]:n1 by value and by reference
+*/
+
+//features in c++17
+
+variant
+visit
+optional
+if_switch_binding
+structured binding
+guranteed_copy_ellision
+
+
+string partially in stack and partially in heap.
+
+
+
+objdump -Cd ./app | less ---->assembly code / instructions
+
+grep "std::make_shared" -l ~filename/ --recursive
+grep "std::make_shared" -l ~filename/ --recursive | wc -l
+
+how many cpp files --> find /home/path -iname "*.cpp" -type f | wc -l
+list files? --> find /home/path -iname "*.cpp" -type f -exec ls -g_demo.txtl {} \; 
+
+awk -F " " '{print $5,"\t",$NF}' log_demo.txt | column -t
+
+g++ file.cpp -Wzero-as-null-pointer-constant -o app  --->gives warning 
+g++ file.cpp -Werror=zero-as-null-pointer-constant -o app  --->giver error
+
+1. Operating Systems -->galvin & Mark Wogahn 
+2. Computer Architecture and Organisation -->
+3. Computer Networks -->
+4. Effective Modern CPP -->Scott Meyers
+
+=> youtube channel -->cppcon2019: Arthur O'Dwyer "Back to Basics:Smart Pointers"
+=> mcoding also good channel
+=> freecodecamp.org --> Pointers in C / C++ [Full Course]
+
+mkdir CompositionDemo
+cd CompositionDemo
+touch BankAccount.{h,cpp} AccountType.h DebitCard.{h,cpp} main.cpp
+g++ -std=c++17 BankAccount.cpp DebitCard.cpp Functionalities.cpp main.cpp -o app -->check in c++17 version
+./app
+g++ copy_ellision2.cpp -fno-elide-constructors -g -o app --->checks for(copy ellisions) constructors are called or not

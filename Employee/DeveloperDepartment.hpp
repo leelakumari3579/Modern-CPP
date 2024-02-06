@@ -1,0 +1,11 @@
+#ifndef DEVELOPERDEPARTMENT_HPP
+#define DEVELOPERDEPARTMENT_HPP
+
+enum class DeveloperDepartment 
+{
+    WEB_DEVELOPER,
+    SYSTEM_DEVELOPER,
+    ML_DEVELOPER
+};
+
+#endif // DEVELOPERDEPARTMENT_HPP
