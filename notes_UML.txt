@@ -1,0 +1,32 @@
+CLASS
+To model inheritance on a class diagram, a solid line is drawn from the child class (the class inheriting the behavior) with a closed, unfilled arrowhead (or triangle) pointing to the super class. 
+italicized text - This indicates that the BankAccount class is an abstract class and the withdrawal method is an abstract operation.
+
+
+ASSOCIATIVITY
+A bi-directional association is indicated by a solid line between the two classes. 
+A uni-directional association is drawn as a solid line with an open arrowhead (not the closed arrowhead, or triangle, used to indicate inheritance) pointing to the known class.
+
+
+PAKAGES
+Inevitably, if you are modeling a large system or a large area of a business,
+some pakages can be connected with junction (+)
+
+
+INTERFACES
+dotted line or dash line with traingle head
+ASSOCIATION CLASS conneted with  dotted line
+
+
+AGGREGATION
+Aggregation is a special type of association used to model a "whole to its parts" relationship. In basic aggregation relationships, the lifecycle of a part class is independent from the whole class's lifecycle.
+you draw a solid line from the parent class to the part class, and draw an unfilled diamond shape on the parent class's association end
+
+COMPOSITION AGGREGATION
+the child class's instance lifecycle is dependent on the parent class's instance lifecycle
+diamond shape is filled same as aggregation.
+
+REFLEXIVE AGGREGATIONS
+sam as assosiation also, a class can also be associated with itself, using a reflexive association
+ This may not make sense at first, but remember that classes are abstractions. 
+ 

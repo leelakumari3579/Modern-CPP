@@ -1,0 +1,52 @@
+STL AlGORITHAMS
+~~~~~~~~~~~~~~~
+
+category1: std::any_of, std::all_of, std::none_of
+    Input parameters : iterators fro input contanier and a predicate function
+    return boolean
+    1) any of the element satisfies condition (any_of) 
+    2) all of the elemets satisfy condition (all_of)
+    3) non of the elemets satisfy condition (none_of)
+
+
+category2: min & max computation
+    1) std::max : takes iterators to input and a comparator. returns first occurance of max value
+    2) std::min : takes iterators to input and a comparator. returns first occurance of min value
+    3) std::min_element : takes iterators to input and a comparator. returns iterator to first
+        occurance of min value.
+    4) std::max_element : takes iterators to input and a comparator. returns iterator to first
+        occurance of max value
+
+
+category3: sorting of elemets
+    1) std::sort : takes input iterators to input and a comparator. returns void
+    Note: 
+        a) only applicable on random access iterators (contaniers that are accessed via positions)
+        b) it performs in-place sorting (sorts original conatiner, not a copy of elements)
+
+
+category4: accumulate
+    1) std::accumulate : takes input iterators to input and a binary function. returns the final answer
+    Note: 
+        a) binary operation has to be of type 
+            answer upto current point , one item from the conatiner as inputs
+            output should be binary operator applied between 2 arguments
+
+
+category5: find family
+    1) std::find_if : iterators for input conatiner and a predicate function
+            return iterator to the first element found that matches the condition
+                else returns input. end iterator
+
+
+category6: count family
+    1) std::count_if : iterators for input conatiner and a predicate function
+            returns count of mathcing contion.
+
+
+category7: for each adaptor
+    1) std::for_each : takes input iterators and a function object. Applies funtion object on 
+            each input item separately, one by one, in sequence.
+
+
+category8: copy, copy_if, search, distance,

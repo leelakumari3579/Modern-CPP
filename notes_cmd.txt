@@ -1,0 +1,14 @@
+1) ls - most imp. command
+2) cd 
+3) md 
+4) cp 
+5) mv 
+6) cat, head, tail 
+7) vim 
+8) netstat
+9) top
+10) apt
+11) kill
+12) file redirection ---->have to learn
+13) tee
+14) 

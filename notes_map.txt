@@ -1,0 +1,45 @@
+/*
+    binay values
+    arrangement of data : data structure
+    data structure is an illution!
+
+    HASHING: it is a technique in which a key is stored precisely at a location determined by running
+    a function (hash funtion). the positon itself is the output of the hash function applied on the key.
+    this output value is also called the hash value or hash
+
+    eg:- 10 21 33
+
+    [10 | harshit | pune], [21 | rohan | mumbai], [33 | kaveri | delhi]
+
+    HASHTABLE: mod 3
+    0 --->{21, [21 | rohan | mumbai] } --->{33, [33 | kaveri | delhi] }
+    1 --->{10, [10 | harshit | pune] } --->nullptr
+    2 --->nullptr
+
+    step1: decide a mathemetical formula which will be used to determine position of each number 10, 21
+    and 33 in a illution called "HASH TABLE".
+    step2: apply the mathemetical formula on each key to obtain hash value.
+    a) 10%3 = 1
+    b) 21%3 = 0
+    c) 33%3 = 0
+
+
+    Array: std::array<EMployee, 3> data;
+      0x100             0x167  0x168           0x235  0x236
+      [ [10 | harshit | pune], [21 | rohan | mumbai], [33 | kaveri | delhi] ]
+
+
+    vector: std::vector<EMployee> data;
+      0x100             0x167  0x168           0x235  0x236
+      [ [10 | harshit | pune], [21 | rohan | mumbai], [33 | kaveri | delhi]........... ]
+
+
+     list: std::list<EMployee> data;
+                        0x123H             
+      [nullptr | [10 | harshit | pune] | 0x876H ]
+                        0x876H
+      [0x123H  | [21 | rohan | mumbai] | 0x543H ]
+                        0x543H
+      [0x876H  | [33 | kaveri | delhi] | nullptr]
+
+*/

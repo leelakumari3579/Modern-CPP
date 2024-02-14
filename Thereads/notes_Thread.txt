@@ -1,0 +1,46 @@
+/*
+    Scenario1: I have a main program which includes a function that can be executed prallel to main
+        or concurrent to main without any dependency on main
+
+        use: since there is no write to shared memory, use std::thread with no synchronization primitve
+
+
+    Scenario2: I have 2 functions to be executed. Both of them are independent of ech other.
+        They can be executed simultaniously. They both write to a shred memory.
+
+    e.g:- Main and t1 calculating Square and Cube of numbers respectively and printing it 
+        on the console 
+
+        use: since there is write to shared memory, use std::thread with a synchronization prmitive
+
+
+    Scenario3: Creating and managing multiple threads
+        use a container like array or list to create a contanier of threads
+
+
+    Scenario4: Function to be executed in threads, return a value
+        use std::future<T> as a result value and launch thread with std::async
+
+
+    Scenario5: I want to start a thread for a function that requires input,
+        but can process some commands even before input becomes available
+        i.e we can execute some part of the function with out involvinf
+        input parameter
+
+        5a) function returns nothing(void)
+            -use future and promise model to send input to the function
+        5b) function returns some value
+            - use future and promise model to send input to the function
+            Also use std::future<T> as return reuslt value. where T is type of return
+
+    Scenerio6: One section of my program performs an action which generates data 
+        values. these values maybe stored in some container/memory location.
+        I want to execute some function to consume/operate on generated values
+        but I have certain exception/limitations
+
+        a) CONSUMPTION SHOULD BE TRIGGERED ONLY WHEN A VALUE BECOMES AVAILABLE
+        B) DATA TO BE CONSUMED/PROCESSED SHALL NOT BE PROVIDED AS INPUT, SINCE
+            i) Values are generated periodically.
+            ii) values are generated but maintained outside of the consumer.
+   
+*/

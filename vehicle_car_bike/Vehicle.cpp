@@ -7,14 +7,19 @@ std::ostream &operator<<(std::ostream &os, const Vehicle &rhs)
        << " _vehicleType: " << static_cast<int>(rhs._vehicleType);
     return os;
 }
-Vehicle::Vehicle(std::string id) : _vehicleId(id) {}
+Vehicle::Vehicle(std::string id) 
+    : _vehicleId(id) 
+{
+}
 
-Vehicle::Vehicle(std::string id, VehicleType vtype) : Vehicle(id)
+Vehicle::Vehicle(std::string id, VehicleType vtype) 
+    : Vehicle(id)
 {
     _vehicleType = vtype;
 }
 
-Vehicle::Vehicle(std::string id, float price, VehicleType vtype) :Vehicle(id, vtype)
+Vehicle::Vehicle(std::string id, float price, VehicleType vtype) 
+    :Vehicle(id, vtype)
 {
     _vehiclePrice = price;
 }

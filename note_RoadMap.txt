@@ -1,0 +1,52 @@
+1) Programming expertise
+    - AT LEAST ONE PROGRAMMING LANGUAGE
+    - Ideally one OOP language, one scripting language 
+        and one general pupose structureoriented language
+        e.g: C/C++/Python
+        e.g: Rust/Java/Python
+        e.g: Rust/Kotlin/Pyhton
+
+2) Linear Data Structures
+    - stack, linkedlist, queue, vector, array, and their variations
+
+3) Essential algorithms
+    - writing code should be work for any other languages 
+     (must not use shortcuts like predefined, language defined methods)
+
+4) Operating system fundamentals
+    - Galvin (book by this author)
+
+5) Computer Networks
+    - know how interlinked our code
+
+6) Databases
+    - learn atleast one SQL and NoSQL techniques
+    - e.g: MySQL, MongoDB.....
+
+7) Version Control
+    - e.g: Git (branching, merge operations, trashing, cherry picking,
+                indexing, commit, remote repository connect)
+
+8) Command Line  
+    - Essential utility commands of your OS
+    - Integration of command line with your editor
+    - understanding path, update, ......
+    - e.g windows powershell, ...........
+
+9) Non-Linear data Structures
+    - trees
+        - n-nary trees
+        - complete trees
+        - Binary search trees
+        - AVL trees
+        - Red_Blaxk trees
+    - graphs
+        - weight/cost
+        - directed graphs
+        - cyclic graphs
+        - bidirected graphs
+
+10) Ability to read Documentation
+    - skimming/searching/identifying relevent
+
+11)   

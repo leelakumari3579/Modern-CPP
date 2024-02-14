@@ -1,0 +1,19 @@
+variant
+optional 
+fold
+visit
+guranteed copy ellision
+if_switch initializer
+structured binding
+
+
+since c++11
+variadic templates
+thread
+async
+lock_guard
+mutex
+unique_guard
+condition variable
+
+

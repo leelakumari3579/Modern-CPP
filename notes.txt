@@ -105,7 +105,27 @@ structured binding
 guranteed_copy_ellision
 
 
-string partially in stack and partially in heap.
+***string partially in stack and partially in heap.
+
+
+ERROR HANDILING
+1) Undefined reference-
+      signature for function call that has been made is not located in any declarations
+      eg:- Undefined reference to main()
+      eg:- Undefined reference to calculateTax()
+2) Undefined reference from the Loader (when you have already checked signature int header)
+      eg:- Body might missing --> Undefined reference for Car::Car(int, const char[5])
+      /user/bin/ld returned 1 exit status
+3) Issues while calling / Invoking a function(which does not have Undefined reference issue)
+      a) too few arguments : number of arguments passed are less than reuqired
+      b) cannot convert something to something_else : sequence of parameters wrong
+         calling functions with wrong arguments.
+         eg:- fun(int, double, char); ---->fun(std::string {"llea"},21,23.78)
+      c) smart pointer instantiation with wrong parameters
+4) Everything OK. Object is instantiated but not assigned!
+      a)samrt pointer convertion from RHS to LHS type which is not possible
+              
+
 
 
 
@@ -126,6 +146,7 @@ g++ file.cpp -Werror=zero-as-null-pointer-constant -o app  --->giver error
 2. Computer Architecture and Organisation -->
 3. Computer Networks -->
 4. Effective Modern CPP -->Scott Meyers
+5. concurrency in action --->BOOK more about threads
 
 => youtube channel -->cppcon2019: Arthur O'Dwyer "Back to Basics:Smart Pointers"
 => mcoding also good channel
@@ -137,3 +158,26 @@ touch BankAccount.{h,cpp} AccountType.h DebitCard.{h,cpp} main.cpp
 g++ -std=c++17 BankAccount.cpp DebitCard.cpp Functionalities.cpp main.cpp -o app -->check in c++17 version
 ./app
 g++ copy_ellision2.cpp -fno-elide-constructors -g -o app --->checks for(copy ellisions) constructors are called or not
+
+ # local : my working folder in my actual system (laptop)
+ #staging area : send files here if they must included in next backup
+ git config --global user.name "LeelaKumari Gorupotu"
+ git config --global user.email "leelakumari@xyz.com"
+ git commit -m "git demo"
+ git log
+//commit a4b8ff5b52ff815bcdde536526742e98c08692fd (HEAD -> master)
+//Author: LeelaKumari Gorupotu <leelakumari@xyz.com>
+//Date:   Tue Feb 6 16:56:10 2024 +0530
+
+  //  git demo
+
+  cat ~/.ssh/id_rsa.pub -->public key
+  ssh-keygen -t rsa -b 4096 -->private key
+  git log --oneline -->backup history
+  git commit -m "git backup 9th feb"
+  
+  git remote add origin git@github:---link
+  git branch -m master main --->new name
+  got config --global init.defaultBranch main -->new name will be perminant
+  git push origin main --set-upstream  -->(requires internet) -->next click yes
+  
