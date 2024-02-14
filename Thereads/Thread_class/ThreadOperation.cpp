@@ -17,3 +17,13 @@ void ThreadOperation::Cube()
     std::lock_guard<std::mutex> lg(mt);
     std::cout<<_value*_value *_value<<"\n";
 }
+
+void ThreadOperation::Produce_value_for_cube()
+{
+    
+}
+
+void ThreadOperation::Consume_value_for_cube()
+{
+
+}
