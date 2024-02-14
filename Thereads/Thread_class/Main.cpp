@@ -11,6 +11,8 @@ int main()
         th1.join();
     }
 
+    obj1.Produce_value_for_cube();
+
     if(th2.joinable())
     {
         th2.join();

@@ -28,7 +28,6 @@ public:
 
     //producer
     void Produce_value_for_cube();
-    void Consume_value_for_cube();
 
     int value() const { return _value; }
     void setValue(int value) { _value = value; }

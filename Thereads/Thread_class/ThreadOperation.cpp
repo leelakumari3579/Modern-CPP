@@ -9,21 +9,21 @@ inline std::ostream &operator<<(std::ostream &os, const ThreadOperation &rhs) {
 void ThreadOperation::Square()
 {
     std::lock_guard<std::mutex> lg(mt);
-    std::cout<<_value*_value<<"\n";
+    std::cout<<"Square: "<<_value*_value<<"\n";
 }
 
 void ThreadOperation::Cube()
 {
-    std::lock_guard<std::mutex> lg(mt);
-    std::cout<<_value*_value *_value<<"\n";
+    //std::lock_guard<std::mutex> lg(mt);
+    std::unique_lock<std::mutex> lk(mt);
+    cv.wait(lk,[&](){return _cube_val_avilable;});
+    std::cout<<"Cube: "<<_value*_value *_value<<"\n";
 }
 
 void ThreadOperation::Produce_value_for_cube()
 {
-    
-}
-
-void ThreadOperation::Consume_value_for_cube()
-{
-
+    std::cout<<"enter the value: ";
+    std::cin>>_value;
+    _cube_val_avilable = true;
+    cv.notify_one();
 }
