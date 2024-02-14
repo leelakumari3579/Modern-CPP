@@ -28,7 +28,7 @@ using BPointer = std::shared_ptr<BusinessOwner>;
 
 int main()
 {
-    std::vector<std::variant<EPointer, BPointer>> data(2);
+    std::vector<std::variant<EPointer, BPointer>> data(4);
     data[0] = std::make_shared<BusinessOwner>();
     data[1] = std::make_shared<Employee>();
 

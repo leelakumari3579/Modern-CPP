@@ -11,7 +11,7 @@ int main()
 
     v1 = 10.21f;
 
-    std::array<std::variant<int, float>, 3> data;
+    std::array<std::variant<int, float>, 3> data{10,10.3f,23};
 
     for (std::variant<int, float> &v : data)
     {
