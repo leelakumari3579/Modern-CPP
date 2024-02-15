@@ -36,6 +36,12 @@ public:
 
     explicit ThreadOperation(int val) : _value(val) {}
 
+    bool cubeValAvilable() const { return _cube_val_avilable; }
+    void setCubeValAvilable(bool cube_val_avilable) { _cube_val_avilable = cube_val_avilable; }
+
+    int cubeVal() const { return _cube_val; }
+    void setCubeVal(int cube_val) { _cube_val = cube_val; }
+
 };
 
 

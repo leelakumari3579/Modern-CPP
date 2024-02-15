@@ -1,4 +1,5 @@
 #include "ThreadOperation.h"
+#include "Functionalities.h"
 
 int main()
 {
@@ -17,4 +18,21 @@ int main()
     {
         th2.join();
     }
+
+    // ThreadContainer data(10);
+    // std::thread th1(Square, data);
+    // std::thread th2(Cube, data);
+
+    // if(th1.joinable())
+    // {
+    //     th1.join();
+    // }
+
+    // Producer_value_cube(data);
+
+    // if(th2.joinable())
+    // {
+    //     th2.join();
+    // }
+
 }
