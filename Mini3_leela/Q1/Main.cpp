@@ -1,8 +1,10 @@
 #include "DataHandler.h"
-#include <iostream>
 #include <future>
 #include <thread>
-#include <optional>
+#include "Functionalities.h"
+#include "EmptyDataExcception.h"
+#include "NoMatchingInstanceException.h"
+#include "NvalueNotFoundException.h"
 
 int main()
 {
@@ -10,16 +12,14 @@ int main()
     std::array<int, 5> d2{6, 7, 8, 9, 0};
     DataHandler data1(d1);
     DataHandler data2(d2);
-    auto lambdaFn = ([](int num)
-                     { if(num % 3 == 0)
-                     return num; },
-                     data1);
+    auto lambdaFn = [](int num)->bool
+                     { return num%3 == 0;};
 
     try
     {        
-        // std::future<std::function<int(std::array<int, 5>)>> result1 =
-        //     std::async(std::launch::async, &DataHandler::FilterData,&data1,lambdaFn);
-        // std::cout<<"value which is divisible by 3: "<<result1.get();
+        std::future<void> result1 =
+            std::async(std::launch::async, &DataHandler::FilterData,&data1,std::ref(lambdaFn));
+        result1.get();
     }
     catch (EmptyDataException &e)
     {
@@ -60,8 +60,7 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
-    std::thread th(&data2,&data1);
-    auto result = data1+data2;
-    std::cout<<"sum of two instances: "<<result;
-    th.join();
+    std::thread th(SumOfObjects,std::ref(data2),std::ref(data1));
+    if(th.joinable())
+        th.join();
 }

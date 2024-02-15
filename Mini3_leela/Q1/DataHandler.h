@@ -2,11 +2,8 @@
 #define DATAHANDLER_H
 #include <array>
 #include <functional>
-#include <ostream>
-#include <algorithm>
-#include "EmptyDataExcception.h"
-#include "NoMatchingInstanceException.h"
-#include "NvalueNotFoundException.h"
+#include <iostream>
+
 
 using ArrayData = std::array<int, 5>;
 
@@ -23,12 +20,12 @@ public:
     ~DataHandler() = default;
 
     DataHandler(ArrayData data);
-    std::function<int(std::array<int,5>)> FilterData(std::function<int(std::array<int,5>)> fn);
+    void FilterData(const std::function<bool(int&)>& fn);
     int FindNthValue(int n);
     int SumOfOdd();
 
     friend std::ostream &operator<<(std::ostream &os, const DataHandler &rhs);
-    DataHandler operator+(DataHandler &dh);
+    int operator+(DataHandler &dh);
 
     ArrayData data() const { return _data; }
 

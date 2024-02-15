@@ -1,5 +1,4 @@
 #include"DataHandler.hpp"
-#include<iostream>
 #include<future>
 #include<thread>
 #include"DataEmptyException.hpp"
