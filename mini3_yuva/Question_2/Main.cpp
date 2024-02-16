@@ -25,7 +25,7 @@ int main()
                 {
                     std::cout << *(std::get<1>(ptr)) << "\n";
                 }
-            }
+            } 
         }
         std::cout << "\n";
 

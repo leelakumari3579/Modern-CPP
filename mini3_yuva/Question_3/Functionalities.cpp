@@ -45,7 +45,7 @@ void DisplayAttributesOfGivenId(EVContainer &data, std::future<int> &ft)
     {
         if (ptr->id() == ID)
         {
-            std::cout << *ptr<<"\n";
+            std::cout << *ptr << "\n";
         }
     }
 }
@@ -69,6 +69,16 @@ std::optional<float> AveragePriceOfAllEvCars(EVContainer &data)
             }
         }
     }
+
+    // for (EVehiclePointer &ptr : data)
+    // {
+    //     if (std::dynamic_pointer_cast<EvCar>(ptr)->engineHorsepower() < 600)
+    //     {
+    //         total += std::dynamic_pointer_cast<EvCar>(ptr)->price();
+    //         count++;
+    //     }
+    // }
+
     if (count == 0)
     {
         return std::nullopt;
@@ -83,14 +93,14 @@ std::optional<EVContainer> InstancesOfPriceAboveThresholdValue(EVContainer &data
     {
         throw EmptyContainerException("Data is empty");
     }
-    for(EVehiclePointer& ptr:data)
+    for (EVehiclePointer &ptr : data)
     {
-        if(ptr->price()>price)
+        if (ptr->price() > price)
         {
             result.push_back(ptr);
         }
     }
-    if(result.empty())
+    if (result.empty())
     {
         return std::nullopt;
     }
@@ -103,10 +113,10 @@ float CalculetSumOfGST(EVContainer &data)
     {
         throw EmptyContainerException("Data is empty");
     }
-    int total=0;
-    for(EVehiclePointer& ptr:data)
+    int total = 0;
+    for (EVehiclePointer &ptr : data)
     {
-        total+=ptr->CalculateGst();
+        total += ptr->CalculateGst();
     }
     return total;
 }
@@ -117,12 +127,12 @@ float CalculateTotalExchangeAmount(EVContainer &data)
     {
         throw EmptyContainerException("Data is empty");
     }
-    int total=0;
-    for(EVehiclePointer& ptr:data)
+    int total = 0;
+    for (EVehiclePointer &ptr : data)
     {
-        if(dynamic_cast<Ev2Wheeler*>(ptr.get()))
+        if (dynamic_cast<Ev2Wheeler *>(ptr.get()))
         {
-            total+=ptr->CalculateExchangeAmount();
+            total += ptr->CalculateExchangeAmount();
         }
     }
     return total;
