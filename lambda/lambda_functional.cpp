@@ -6,11 +6,8 @@
 void manager(std::function<int(int)> fn, std::vector<int> &data) // function wrapper -->provides type eraser
 {
     for (int val : data)
-    {
         std::cout << fn(val);
-    }
 }
-
 // int square(int num)
 // {
 //     return num * num;
@@ -20,7 +17,6 @@ void manager(std::function<int(int)> fn, std::vector<int> &data) // function wra
 // {
 //     return num * num * num;
 // }
-
 void magic()
 {
     // manager(cube, data);
@@ -36,7 +32,6 @@ void magic()
     // execute f1 directly like a function without passing
     std::cout << f1(10);
 }
-
 int main()
 {
     std::vector<int> data{2, 23, 45, 23};

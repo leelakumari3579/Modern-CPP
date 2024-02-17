@@ -10,7 +10,7 @@ void Operation(const std::array<int, 5> &data, FnContainer& fns)
     for(auto& fn : fns)
     {
         for (int val : data)
-            fn(val);
+            std::cout<<fn(val)<<"\n";
     }
 }
 
