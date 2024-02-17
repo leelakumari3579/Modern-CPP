@@ -3,7 +3,7 @@
 #include <memory>
 
 using EmprPointer = std::shared_ptr<Employee>;
-using MapItem = std::pair<int, Employee>;
+using MapItem = std::pair<const int, Employee>;
 using MapContainer = std::unordered_map<int, Employee>;
 
 void Display(MapContainer &data)
@@ -15,20 +15,18 @@ void Display(MapContainer &data)
 
     for (auto itr = data.begin(); itr != data.end(); itr++)
     {
-        std::cout << "key is: " << itr->first << " value is : " << *(itr->second) << "\n";
+        std::cout << "key is: " << itr->first << " value is : " << /* * */(itr->second) << "\n";
     }
 
     for (const MapItem &p : data)
     {
-        std::cout << "key is: " << p.first << " value is : " << *(p.second) << "\n";
+        std::cout << "key is: " << p.first << " value is : " <<  /* * */(p.second) << "\n";
     }
 }
 
 int main()
 {
-    MapContainer data //;
-        {
-            std::make_pair<int, EmprPointer>(10, std::make_shared<Employee>(10, "harshit", "pune"))};
+    MapContainer data; //{std::make_pair<int, EmprPointer>(10, std::make_shared<Employee>(10, "harshit", "pune"))};
 
     // data.emplace(std::pair<int,Employee>(10,Employee(10,"harsit","pune")));
     data.emplace(std::make_pair<int, EmprPointer>(21, std::make_shared<Employee>(21, "rohan", "mumbai")));
@@ -39,7 +37,7 @@ int main()
     // search an item by key
     if (auto itr = data.find(10); itr != data.end())
     {
-        std::cout << "employee with given ID found: " << *(itr->second) << "\n";
+        std::cout << "employee with given ID found: " <<  /* * */(itr->second) << "\n";
     }
     else
     {

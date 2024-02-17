@@ -46,7 +46,5 @@ int main()
     */
 
     std::unique_ptr<DataModel> ptr = std::make_unique<DataModel>(
-        10,name,grade,std::vector<int>{10,20,30});
-
-    
+        10,name,grade,std::vector<int>{10,20,30});    
 }
