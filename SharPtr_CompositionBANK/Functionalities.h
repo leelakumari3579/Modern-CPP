@@ -7,5 +7,6 @@ using AccountPointer = std::shared_ptr<BankAccount>;
 using Container = std::vector<AccountPointer>;
 
 void CreateObject(Container& data); //empty
+float FindAverageBalance(Container& data);
 
 #endif // FUNCTIONALITIES_H

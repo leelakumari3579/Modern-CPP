@@ -1,4 +1,6 @@
 #include "Functionalities.h"
+#include <numeric>
+#include <algorithm>
 
 void CreateObject(Container &data)
 {
@@ -31,4 +33,19 @@ void CreateObject(Container &data)
             )
         )
     );
+}
+
+float FindAverageBalance(Container & data)
+{
+    int count = 0;
+    float ans = std::accumulate(
+        data.begin(),
+        data.end(),
+        0.0f,
+        [&](int val,AccountPointer& ptr){
+            count++;
+            return val + ptr->accountBalance();
+        }
+    );
+    return ans/count;
 }

@@ -41,6 +41,9 @@ public:
     CardPointer accountDebitCard() const { return _accountDebitCard; }
     void setAccountType(const AccountType &accountType) { _accountType = accountType; }
 
+    float accountBalance() const { return _accountBalance; }
+    void setAccountBalance(float accountBalance) { _accountBalance = accountBalance; }
+
 };
 
 inline int BankAccount::_counter = 900000;

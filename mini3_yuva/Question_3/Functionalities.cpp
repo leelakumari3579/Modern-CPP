@@ -58,9 +58,20 @@ std::optional<float> AveragePriceOfAllEvCars(EVContainer &data)
     }
     int total = 0;
     int count = 0;
-    for (EVehiclePointer &ptr : data)
+    // for (EVehiclePointer &ptr : data)
+    // {
+    //     if (dynamic_cast<EvCar *>(ptr.get()))
+    //     {
+    //         if (ptr->engineHorsepower()<600)
+    //         {
+    //             total += ptr->price();
+    //             count++;
+    //         }
+    //     }
+    // }
+     for (EVehiclePointer &ptr : data)
     {
-        if (dynamic_cast<EvCar *>(ptr.get()))
+        if (std::dynamic_pointer_cast<EvCar>(ptr))
         {
             if (ptr->engineHorsepower()<600)
             {
@@ -69,15 +80,6 @@ std::optional<float> AveragePriceOfAllEvCars(EVContainer &data)
             }
         }
     }
-
-    // for (EVehiclePointer &ptr : data)
-    // {
-    //     if (std::dynamic_pointer_cast<EvCar>(ptr)->engineHorsepower() < 600)
-    //     {
-    //         total += std::dynamic_pointer_cast<EvCar>(ptr)->price();
-    //         count++;
-    //     }
-    // }
 
     if (count == 0)
     {
