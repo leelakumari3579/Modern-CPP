@@ -14,43 +14,51 @@ std::vector<FnType> fns;
 #include <stdexcept>
 #include <vector>
 
-using FnType = std::function<int(std::vector<int>& data)>;
+using FnType = std::function<int(std::vector<int> &data)>;
 using FnContainer = std::vector<FnType>;
 using DataContainer = std::vector<int>;
 
-void Operation(FnContainer& fns, DataContainer& data)
+void Operation(FnContainer &fns, DataContainer &data)
 {
-    for(FnType fn : fns)
+    for (FnType fn : fns)
     {
-        fn(data);
+        std::cout<<fn(data)<<"\n";
     }
 }
 
 int main()
 {
-    //find the first number in vector
-    auto f1 = [](std::vector<int>& data)->int{
-        if(data.empty())
+    std::vector<int> data{2, 23, 45, 23};
+    // DataContainer data(data1);
+
+    // find the first number in vector
+    auto f1 = [](std::vector<int> &data) -> int
+    {
+        if (data.empty())
             throw std::runtime_error("data is empty!!");
         return data.front();
     };
 
-    //find last number
-    auto f2 = [](std::vector<int>& data)->int{
-        if(data.empty())
+    // find last number
+    auto f2 = [](std::vector<int> &data) -> int
+    {
+        if (data.empty())
             throw std::runtime_error("data is empty!!");
         return data.back();
     };
 
-    //find total
-    auto f3 = [](std::vector<int>& data)->int{
-        if(data.empty())
+    // find total
+    auto f3 = [](std::vector<int> &data) -> int
+    {
+        if (data.empty())
             throw std::runtime_error("data is empty!!");
         int total = 0.0f;
-        for(int val : data)
+        for (int val : data)
             total += val;
         return total;
     };
 
-    std::vector<FnType> fns {f1,f2,f3}; ///f1,f2,f3 are not functions...they are objects
+    std::vector<FnType> fns{f1, f2, f3}; /// f1,f2,f3 are not functions...they are objects
+
+    Operation(fns,data);
 }
