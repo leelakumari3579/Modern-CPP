@@ -6,7 +6,7 @@
 void manager(std::function<int(int)> fn, std::vector<int> &data) // function wrapper -->provides type eraser
 {
     for (int val : data)
-        std::cout << fn(val);
+        std::cout << fn(val)<<"\n";
 }
 // int square(int num)
 // {
@@ -30,7 +30,7 @@ void magic()
                                 { return num * num * num; };
 
     // execute f1 directly like a function without passing
-    std::cout << f1(10);
+    std::cout << f1(10)<<"\n";
 }
 int main()
 {
