@@ -107,7 +107,7 @@ std::string FindMinBalanceExpiry(const Container &data)
         data.begin(),
         data.end(),
         [](const AccountPointer& ptr1, const AccountPointer& ptr2) {
-            return ptr1->accountBalance() > ptr2->accountBalance();
+            return ptr1->accountBalance() < ptr2->accountBalance();
         }
     );
     return (*itr)->accountDebitCard()->expiryDate();
