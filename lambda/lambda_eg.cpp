@@ -51,7 +51,7 @@ int main()
     [=] means all variables in enclosing function are captured by value
     [&n1] means only n1 variable is caprtured by reference
     [n1] menas only n1 is captured by value
-    [n1, &a]:n1 by value and by reference
+    [n1, &a]:n1 by value and a by reference
 */
 
 // stupid code
