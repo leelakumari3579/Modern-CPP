@@ -1,0 +1,106 @@
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h:33,
+                 from /usr/include/c++/9/bits/allocator.h:46,
+                 from /usr/include/c++/9/vector:64,
+                 from functionalities.h:4,
+                 from fucntionalities.cpp:1:
+/usr/include/c++/9/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’:
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:27:28:   required from here
+/usr/include/c++/9/ext/new_allocator.h:146:4: error: no matching function for call to ‘std::function<int(std::vector<int>)>::function(MakeLambda(funContainer)::<lambda(std::vector<int>&)>&)’
+  146 |  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/9/functional:59,
+                 from functionalities.h:5,
+                 from fucntionalities.cpp:1:
+/usr/include/c++/9/bits/std_function.h:447:2: note: candidate: ‘template<class _Functor, class, class> std::function<_Res(_ArgTypes ...)>::function(_Functor)’
+  447 |  function(_Functor);
+      |  ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:447:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/9/bits/std_function.h: In substitution of ‘template<class _Res, class ... _ArgTypes> template<class _Cond, class _Tp> using _Requires = typename std::enable_if<_Cond::value, _Tp>::type [with _Cond = std::function<int(std::vector<int>)>::_Callable<MakeLambda(funContainer)::<lambda(std::vector<int>&)>, std::__invoke_result<MakeLambda(funContainer)::<lambda(std::vector<int>&)>&, std::vector<int, std::allocator<int> > > >; _Tp = void; _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’:
+/usr/include/c++/9/bits/std_function.h:446:9:   required from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:27:28:   required from here
+/usr/include/c++/9/bits/std_function.h:385:8: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  385 |  using _Requires = typename enable_if<_Cond::value, _Tp>::type;
+      |        ^~~~~~~~~
+/usr/include/c++/9/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’:
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:27:28:   required from here
+/usr/include/c++/9/bits/std_function.h:423:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(std::function<_Res(_ArgTypes ...)>&&) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  423 |       function(function&& __x) noexcept : _Function_base()
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:423:27: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘std::function<int(std::vector<int>)>&&’
+  423 |       function(function&& __x) noexcept : _Function_base()
+      |                ~~~~~~~~~~~^~~
+/usr/include/c++/9/bits/std_function.h:653:5: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(const std::function<_Res(_ArgTypes ...)>&) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  653 |     function<_Res(_ArgTypes...)>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/std_function.h:654:30: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘const std::function<int(std::vector<int>)>&’
+  654 |     function(const function& __x)
+      |              ~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/9/bits/std_function.h:403:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(std::nullptr_t) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}; std::nullptr_t = std::nullptr_t]’
+  403 |       function(nullptr_t) noexcept
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:403:16: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘std::nullptr_t’
+  403 |       function(nullptr_t) noexcept
+      |                ^~~~~~~~~
+/usr/include/c++/9/bits/std_function.h:396:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function() [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  396 |       function() noexcept
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:396:7: note:   candidate expects 0 arguments, 1 provided
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h:33,
+                 from /usr/include/c++/9/bits/allocator.h:46,
+                 from /usr/include/c++/9/vector:64,
+                 from functionalities.h:4,
+                 from fucntionalities.cpp:1:
+/usr/include/c++/9/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’:
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:28:28:   required from here
+/usr/include/c++/9/ext/new_allocator.h:146:4: error: no matching function for call to ‘std::function<int(std::vector<int>)>::function(MakeLambda(funContainer)::<lambda(std::vector<int>&)>&)’
+  146 |  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/9/functional:59,
+                 from functionalities.h:5,
+                 from fucntionalities.cpp:1:
+/usr/include/c++/9/bits/std_function.h:447:2: note: candidate: ‘template<class _Functor, class, class> std::function<_Res(_ArgTypes ...)>::function(_Functor)’
+  447 |  function(_Functor);
+      |  ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:447:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/9/bits/std_function.h: In substitution of ‘template<class _Res, class ... _ArgTypes> template<class _Cond, class _Tp> using _Requires = typename std::enable_if<_Cond::value, _Tp>::type [with _Cond = std::function<int(std::vector<int>)>::_Callable<MakeLambda(funContainer)::<lambda(std::vector<int>&)>, std::__invoke_result<MakeLambda(funContainer)::<lambda(std::vector<int>&)>&, std::vector<int, std::allocator<int> > > >; _Tp = void; _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’:
+/usr/include/c++/9/bits/std_function.h:446:9:   required from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:28:28:   required from here
+/usr/include/c++/9/bits/std_function.h:385:8: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  385 |  using _Requires = typename enable_if<_Cond::value, _Tp>::type;
+      |        ^~~~~~~~~
+/usr/include/c++/9/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>]’:
+/usr/include/c++/9/bits/alloc_traits.h:483:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::function<int(std::vector<int>)>; _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::function<int(std::vector<int>)> >]’
+/usr/include/c++/9/bits/vector.tcc:115:30:   required from ‘std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {MakeLambda(funContainer)::<lambda(std::vector<int, std::allocator<int> >&)>&}; _Tp = std::function<int(std::vector<int>)>; _Alloc = std::allocator<std::function<int(std::vector<int>)> >; std::vector<_Tp, _Alloc>::reference = std::function<int(std::vector<int>)>&]’
+fucntionalities.cpp:28:28:   required from here
+/usr/include/c++/9/bits/std_function.h:423:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(std::function<_Res(_ArgTypes ...)>&&) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  423 |       function(function&& __x) noexcept : _Function_base()
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:423:27: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘std::function<int(std::vector<int>)>&&’
+  423 |       function(function&& __x) noexcept : _Function_base()
+      |                ~~~~~~~~~~~^~~
+/usr/include/c++/9/bits/std_function.h:653:5: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(const std::function<_Res(_ArgTypes ...)>&) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  653 |     function<_Res(_ArgTypes...)>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/std_function.h:654:30: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘const std::function<int(std::vector<int>)>&’
+  654 |     function(const function& __x)
+      |              ~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/9/bits/std_function.h:403:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function(std::nullptr_t) [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}; std::nullptr_t = std::nullptr_t]’
+  403 |       function(nullptr_t) noexcept
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:403:16: note:   no known conversion for argument 1 from ‘MakeLambda(funContainer)::<lambda(std::vector<int>&)>’ to ‘std::nullptr_t’
+  403 |       function(nullptr_t) noexcept
+      |                ^~~~~~~~~
+/usr/include/c++/9/bits/std_function.h:396:7: note: candidate: ‘std::function<_Res(_ArgTypes ...)>::function() [with _Res = int; _ArgTypes = {std::vector<int, std::allocator<int> >}]’
+  396 |       function() noexcept
+      |       ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:396:7: note:   candidate expects 0 arguments, 1 provided

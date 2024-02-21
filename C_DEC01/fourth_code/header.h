@@ -1,0 +1,1 @@
+int fndMaxFreqDigit(int,int);
