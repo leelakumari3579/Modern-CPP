@@ -1,35 +1,30 @@
 #include "ThreadHandler.h"
-// #include "Functionalities.h"
 #include <iostream>
-#include <algorithm>
-
-
-void ThreadHandler::InputCapture(std::vector<int> &data)
-{
-    std::cout << "enter 5 elements: " << std::endl;
-    for (int i = 0; i < 5; i++)
-    {
-        std::cin >> _n[i];
-        data.emplace_back(_n[i]);
-    }
-    _flag = true;
-    cv.notify_one();
-}
 
 void ThreadHandler::Operation()
 {
-    std::unique_lock<std::mutex> lk(mt);
-    cv.wait(lk,[&](){return _flag;});
-    std::for_each(
-        _n.begin(),
-        _n.end(),
-        [](const int& val) {
-            std::cout<<"Squares: "<<val*val;
-        }
-    );
+    std::unique_lock<std::mutex> lk(_mt);
+    _cv.wait(lk, [&](){
+        return _isValAvailable;
+    });
+    int* data = new int[_N];
+    std::cout << "Enter the values : ";
+    for(int i=0;i<_N;i++) {
+        std::cin >> data[i];
+    }
+    for(int i=0;i<_N;i++) {
+        std::cout << "Square of Value : " << data[i] << " is " << data[i]*data[i] << "\n";
+    }
+
 }
 
-std::ostream &operator<<(std::ostream &os, const ThreadHandler &rhs) {
-    os << "Vector of integers: " << rhs._n;
-    return os;
+bool ThreadHandler::InputCapture()
+{
+    std::cout << "Enter the value of N : ";
+    std::cin >> _N;
+    if(_N) {
+        _isValAvailable = true;
+        _cv.notify_one();
+    }
+    return false;
 }

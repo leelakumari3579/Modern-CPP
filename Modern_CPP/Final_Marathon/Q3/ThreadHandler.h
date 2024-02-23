@@ -11,10 +11,10 @@
 class ThreadHandler
 {
 private:
-    std::vector<int> _n;
-    std::mutex mt;
-    bool _flag{false};
-    std::condition_variable cv;
+    std::mutex _mt;
+    std::condition_variable _cv;
+    int _N;
+    bool _isValAvailable;
 public:
     ThreadHandler() = default;
     ThreadHandler(const ThreadHandler &) = default;
@@ -23,20 +23,12 @@ public:
     ThreadHandler(ThreadHandler &&) = delete;
     ~ThreadHandler() = default;
 
-    //parameterized constructor
-    ThreadHandler(std::vector<int> n) :_n(n){}
+    explicit ThreadHandler(int val) : _N(val) { }
 
-    //member functions
-    void InputCapture(std::vector<int>& data);
     void Operation();
 
-    std::vector<int> n() const { return _n; }
-    void setN(const std::vector<int> &n) { _n = n; }
+    bool InputCapture();
 
-    bool flag() const { return _flag; }
-    void setFlag(bool flag) { _flag = flag; }
-
-    friend std::ostream &operator<<(std::ostream &os, const ThreadHandler &rhs);
 
 };
 
