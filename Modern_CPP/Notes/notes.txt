@@ -132,6 +132,45 @@ ERROR HANDILING
 
 
 
+C++: The Complete Reference
+FOR FURTHER STUDY
+
+C++: The Complete Reference is your gateway to the Herb Schildt series of
+programming books. Here are some others that you will find of interest.
+To learn more about C++, try
+
+C++: A Beginner’s Guide
+C++ from the Ground Up
+Teach Yourself C++
+STL Programming from the Ground Up
+C++ Programmer’s Reference
+
+To learn about Java programming, we recommend the following:
+
+Java 2: A Beginner’s Guide
+Java 2: The Complete Reference
+Java 2 Programmer’s Reference
+
+To learn about C#, Herb offers these books:
+
+C#: A Beginner’s Guide
+C#: The Complete Reference
+
+To learn about Windows programming we suggest the following Schildt books:
+
+Windows 98 Programming from the Ground Up
+Windows 2000 Programming from the Ground Up
+MFC Programming from the Ground Up
+The Windows Programming Annotated Archives
+
+If you want to learn about the C language, which is the foundation of all modern
+programming, then the following titles will be of interest.
+
+C: The Complete Reference
+Teach Yourself C
+
+
+
 
 objdump -Cd ./app | less ---->assembly code / instructions
 
